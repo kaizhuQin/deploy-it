@@ -52,7 +52,11 @@ var deleteCommand = Handlebar.compile([
 ].join("\n"));
 
 function writeAndExecute(command) {
-    var tmpFile = "/tmp/" + Date.now();
+    var tmpFile = "/tmp/" + Date.now() + Math.random();
+    while (path.existsSync(tmpFile)) {
+        tmpFile = "/tmp/" + Date.now() + Math.random();
+    }
+
     fs.writeFileSync(tmpFile, command, "utf-8");
     exec("expect " + tmpFile, function(error, stdout, stderr) {
         if (error !== null) {
@@ -62,7 +66,9 @@ function writeAndExecute(command) {
         else {
             console.log(stdout);
         }
-        fs.unlinkSync(tmpFile);
+        if (path.existsSync(tmpFile)) {
+            fs.unlinkSync(tmpFile);
+        }
     });
 }
 
@@ -117,7 +123,9 @@ yaml.loadAll(fs.readFileSync(configFile, "utf-8"), function(content) {
                 password: content.sftp.password,
                 host: content.sftp.host,
                 remotePath: content.remotePath,
-                remoteFilename: event.name.replace(content.localPath, "")
+                remoteFilename: event.isDirectory() ? 
+                    path.dirname(event.name.replace(content.localPath, "")) :
+                        event.name.replace(content.localPath, "")
             });
             writeAndExecute(command);
             if (!event.isDirectory() && path.extname(event.name) === ".scss") {
