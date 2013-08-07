@@ -35,7 +35,9 @@
     localPath: /Users/wul/zone/ais
     # 同步到远程的哪一个目录
     remotePath: /home/wul/zone/ais
-    
+    # 远程服务器用什么路径分隔
+    remotePathSep: "/"
+
     # 当文件有被修改时的动作
     # 其中的{{{pluginsPath}}}是在plugins这个目录，当然用户也可以写绝对路径
     onFileAdded: "{{{pluginsPath}}}/on-file-added-for-deploy.js"
