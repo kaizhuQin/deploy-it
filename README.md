@@ -34,15 +34,17 @@
     remotePath: /home/wul/zone/ais
     
     # 当文件有被修改时的动作
+    # 其中的{{{pluginsPath}}}是在plugins这个目录，当然用户也可以写绝对路径
     onFileAdded: "{{{pluginsPath}}}/on-file-added-for-deploy.js"
     # 当文件有被添加时的动作
     onFileChanged: "{{{pluginsPath}}}/on-file-added-for-deploy.js"
     # 当文件有被删除时的动作
     onFileRemoved: "{{{pluginsPath}}}/on-file-removed-for-deploy.js"
     
-    # 哪些文件被忽略
+    # 哪些文件被忽略,支持正则表达式
     excludes:
       - ".class$"
 
-
+# 自定义响应操作
+这个工具支持当监听到文件有修改时的，自定义响应操作，具体的可以参考：[on-file-removed-for-deploy.js](https://github.com/magicsky/deploy-it/blob/master/plugins/on-file-removed-for-deploy.js)
       
