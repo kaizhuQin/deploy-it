@@ -21,3 +21,28 @@
 
 ## 配置
 
+    # 配置远程主机名，目前只支持sftp的
+    sftp:
+      host: 10.12.1.195
+      port: 22
+      username: user
+      password: hello
+    
+    # 监听本地哪一个目录
+    localPath: /Users/wul/zone/ais
+    # 同步到远程的哪一个目录
+    remotePath: /home/wul/zone/ais
+    
+    # 当文件有被修改时的动作
+    onFileAdded: "{{{pluginsPath}}}/on-file-added-for-deploy.js"
+    # 当文件有被添加时的动作
+    onFileChanged: "{{{pluginsPath}}}/on-file-added-for-deploy.js"
+    # 当文件有被删除时的动作
+    onFileRemoved: "{{{pluginsPath}}}/on-file-removed-for-deploy.js"
+    
+    # 哪些文件被忽略
+    excludes:
+      - ".class$"
+
+
+      
