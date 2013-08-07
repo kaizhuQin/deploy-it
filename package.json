@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "description": "远程部署工具",
     "main": "lib/file-watcher.js",
+    "homepage": "https://github.com/magicsky/deploy-it",
     "bin": {
         "deploy-it": "bin/deploy.js"
     },
