@@ -1,0 +1,26 @@
+sftp:
+  host: 10.12.1.195
+  port: 22
+  username: user
+  password: hello
+
+localPath: /Users/wul/zone/ais
+remotePath: /home/wul/zone/ais
+
+onFileAdded: "{{{pluginsPath}}}/on-file-added-for-deploy.js"
+onFileChanged: "{{{pluginsPath}}}/on-file-added-for-deploy.js"
+onFileRemoved: "{{{pluginsPath}}}/on-file-removed-for-deploy.js"
+
+excludes:
+  - ".svn"
+  - ".csv"
+  - ".idea"
+  - ".DS_Store"
+  - ".git"
+  - ".hg"
+  - ".class$"
+  - ".jar$"
+  - "node_modules"
+  - ".swp$"
+  - ".log$"
+  - ".dist"
