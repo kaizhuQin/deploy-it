@@ -22,7 +22,7 @@
     "bugs": {
         "url": "https://github.com/magicsky/deploy-it/issues"
     },
-    "devDependencies": {
+    "dependencies": {
         "node.extend": "~1.0.7",
         "handlebars": "~1.0.11",
         "js-yaml": "~2.0.5",
