@@ -1,0 +1,35 @@
+{
+    "name": "deploy-it",
+    "version": "0.0.1",
+    "description": "远程部署工具",
+    "main": "./lib/file-watcher.js",
+    "bin": {
+        "deploy-it": "deploy.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/magicsky/deploy-it"
+    },
+    "keywords": [
+        "远程部署"
+    ],
+    "author": "magicsky",
+    "license": "BSD",
+    "bugs": {
+        "url": "https://github.com/magicsky/deploy-it/issues"
+    },
+    "devDependencies": {
+        "node.extend": "~1.0.7",
+        "handlebars": "~1.0.11",
+        "js-yaml": "~2.0.5",
+        "log4js": "~0.6.7",
+        "watch": "~0.7.0",
+        "underscore": "~1.5.1",
+        "ssh2": "~0.2.11",
+        "nodeproxy": "~1.0.0",
+        "underscore.string": "~2.3.3"
+    }
+}
