@@ -20,7 +20,5 @@ excludes:
   - ".hg"
   - ".class$"
   - ".jar$"
-  - "node_modules"
   - ".swp$"
   - ".log$"
-  - ".dist"

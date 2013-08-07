@@ -2,16 +2,16 @@
     "name": "deploy-it",
     "version": "0.0.1",
     "description": "远程部署工具",
-    "main": "./lib/file-watcher.js",
+    "main": "lib/file-watcher.js",
     "bin": {
-        "deploy-it": "deploy.js"
+        "deploy-it": "bin/deploy.js"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/magicsky/deploy-it"
+        "url": "git://github.com/magicsky/deploy-it"
     },
     "keywords": [
         "远程部署"
