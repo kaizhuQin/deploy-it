@@ -31,7 +31,7 @@ module.exports = function(config, filePath, stat) {
         var postfix = StringUtils.lstrip(filePath, config.localPath);
         postfix = StringUtils.lstrip(postfix, "/");
         var remoteFile = path.join(config.remotePath, postfix);
-        remoteFile = path.normalize(remoteFile);
+        remoteFile = remoteFile.split(path.sep).join(config.remotePathSep);
         logger.info(util.format('ready to remove', filePath));
         // TODO garcia.wul 这块用ssh2做起来比较麻烦，暂时先调用命令
         var command = util.format("rm -rf %s", remoteFile);

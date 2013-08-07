@@ -38,9 +38,9 @@ module.exports = function(config, filePath, stat) {
                 logger.info("sftp session end");
             });
             var postfix = StringUtils.lstrip(filePath, config.localPath);
-            postfix = StringUtils.lstrip(postfix, "/");
+            postfix = StringUtils.lstrip(postfix, path.sep);
             var remoteFile = path.join(config.remotePath, postfix);
-            remoteFile = path.normalize(remoteFile);
+            remoteFile = remoteFile.split(path.sep).join(config.remotePathSep);
             logger.info(util.format('ready to scp %s to %s', filePath, remoteFile));
             // TODO garcia.wul 这块用ssh2做起来比较麻烦，暂时先调用命令
             var command = util.format("rm -rf %s", remoteFile);

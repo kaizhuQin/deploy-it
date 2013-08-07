@@ -6,6 +6,8 @@ sftp:
 
 localPath: /Users/wul/zone/ais
 remotePath: /home/wul/zone/ais
+# 远程服务器用什么路径分隔
+remotePathSep: "/"
 
 onFileAdded: "{{{pluginsPath}}}/on-file-added-for-deploy.js"
 onFileChanged: "{{{pluginsPath}}}/on-file-added-for-deploy.js"

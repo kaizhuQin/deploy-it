@@ -25,5 +25,6 @@ yaml.loadAll(fs.readFileSync(configFile, "utf-8"), function(config) {
         logLevel: "DEBUG"
     };
     extend(true, defaultConfig, config);
+    defaultConfig.localPath = path.normalize(defaultConfig.localPath);
     fileWatcher(defaultConfig);
 });
