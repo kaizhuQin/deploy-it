@@ -19,6 +19,7 @@
 
 # 使用
 运行前需要写一个配置文件，配置文件可以参考[example.yaml](https://github.com/magicsky/deploy-it/blob/master/example.yaml)
+配置采用[YAML](http://www.yaml.org/)格式
 
     deploy.js test.yaml
 
