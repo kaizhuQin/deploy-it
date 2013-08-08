@@ -2,8 +2,11 @@
   <dictionary name="wul">
     <words>
       <w>chokidar</w>
+      <w>github</w>
+      <w>magicsky</w>
       <w>nodeproxy</w>
       <w>sftp</w>
+      <w>yaml</w>
     </words>
   </dictionary>
 </component>

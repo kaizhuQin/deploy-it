@@ -37,8 +37,8 @@ module.exports = function(config, filePath, stat) {
             sftp.on("end", function() {
                 logger.info("sftp session end");
             });
-            var postfix = StringUtils.lstrip(filePath, config.localPath);
-            postfix = StringUtils.lstrip(postfix, path.sep);
+            var postfix = StringUtils.lstrip(filePath, {source: config.localPath});
+            postfix = StringUtils.lstrip(postfix, {source: path.sep});
             var remoteFile = path.join(config.remotePath, postfix);
             remoteFile = remoteFile.split(path.sep).join(config.remotePathSep);
             logger.info(util.format('ready to scp %s to %s', filePath, remoteFile));
