@@ -1,6 +1,6 @@
 {
     "name": "deploy-it",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "远程部署工具",
     "main": "lib/file-watcher.js",
     "homepage": "https://github.com/magicsky/deploy-it",
