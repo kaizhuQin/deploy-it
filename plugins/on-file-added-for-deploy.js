@@ -16,8 +16,8 @@ var StringUtils = require("underscore.string");
 var findSync = require("findit");
 var EventEmitter = require('events').EventEmitter;
 
-module.exports = function(config, filePath, stat) {
-    var logger = log4js.getLogger("watcher");
+module.exports = function(config, filePath, stat, syncStatusEmitter) {
+    var logger = log4js.getLogger("file-added");
     var connection = new Connection();
     connection.on("connect", onConnecting);
     connection.on("error", onConnectError);
@@ -95,6 +95,7 @@ module.exports = function(config, filePath, stat) {
         connection.sftp(function(error, sftp) {
             if (error) {
                 logger.error("sftp open error: " + error);
+                connection.end();
                 return;
             }
 
@@ -157,6 +158,7 @@ module.exports = function(config, filePath, stat) {
 
     function onConnectClosed() {
         logger.debug("on ssh connect closed");
+        syncStatusEmitter.emit("synced")
     }
 
     connection.connect({

@@ -10,7 +10,7 @@ var exec = require('child_process').exec;
 var log4js = require('log4js');
 var logger = log4js.getLogger("on-hosts-change-flush");
 var os = require("os");
-module.exports = function(config, filePath, stat) {
+module.exports = function(config, filePath, stat, syncStatusEmitter) {
     var flushDnsCommand = null;
     logger.info("platform is " + os.platform());
     if (os.platform() === "darwin") {
@@ -23,6 +23,7 @@ module.exports = function(config, filePath, stat) {
         flushDnsCommand = "ipconfig /flushdns";
     }
     if (flushDnsCommand === null) {
+        syncStatusEmitter.emit("synced");
         return;
     }
     exec(flushDnsCommand, function(error, stdout, stderr) {
@@ -35,6 +36,7 @@ module.exports = function(config, filePath, stat) {
         if (stdout) {
             logger.info(stdout)
         }
+        syncStatusEmitter.emit("synced");
     });
 
 };
