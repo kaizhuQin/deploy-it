@@ -1,0 +1,4 @@
+localPath: /etc/hosts
+
+onFileChanged: "{{{pluginsPath}}}/on-hosts-change-flush.js"
+
