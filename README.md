@@ -57,7 +57,7 @@
 # 更新日志
 ## 0.0.2
 
-* 解决当添加一个目录时，这个目录里面有文件，里面的文件没有被同步的bug [#1](#https://github.com/magicsky/deploy-it/issues/1)
+* 解决当添加一个目录时，这个目录里面有文件，里面的文件没有被同步的bug [#1](https://github.com/magicsky/deploy-it/issues/1)
 * mac下会触发两次added事件问题修复[#2](https://github.com/magicsky/deploy-it/issues/2)，但解决办法还不是很完美：放到一个list中，搞了一个interval
 
 ## 0.0.1
