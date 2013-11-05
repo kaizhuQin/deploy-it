@@ -59,7 +59,7 @@ module.exports = function(config, filePath, stat, syncStatusEmitter) {
 
     function onTriggerNextSync(fileNames, syncEmitter, remoteFile, sftp) {
         if (!fileNames || fileNames.length <= 0) {
-            if (!syncEmitter.removeListener) {
+            if (!syncEmitter || !syncEmitter.removeListener) {
                 return;
             }
 
